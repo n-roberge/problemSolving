@@ -87,4 +87,4 @@ function paindromeCheck(word){
     }
 };
 
-paindromeCheck("kayak")
+paindromeCheck("kayak");
