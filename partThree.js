@@ -99,15 +99,25 @@ function arrayBreakdown(array){
 };
 let array4 = [7, 9, -3, -32, 107, -1, 36, 95, -14, -99, 21];
 
-let test = arrayBreakdown(array4)
-console.log(test)
-
-
-
-
+// let test = arrayBreakdown(array4)
+// console.log(test)
 
 //5. Method: Space separated vales and returns highest and lowest as a string ****************
+//Step 1: Extract the values from the string by splitting the string by spaces
+//Step 2: Sort numerically
+//Step 3: Last position defined as the length of the array minus 1
+//Step 4: Return the first and last index values into a new string
 
+function stringSort(string){
+    let stringValues = string.split(" ");
+    let sorted = stringValues.sort(function(a,b){return a-b});
+    let last = sorted.length - 1;
+    let answer = `${sorted[0]}, ${sorted[last]}`
+    return answer;
+};
+
+let test = stringSort("3 9 0 1 4 8 10 2")
+console.log(test)
 
 //6. Method: Validate email address **********************************************************
 
