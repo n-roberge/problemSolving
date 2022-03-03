@@ -25,8 +25,8 @@ function targetSum(array){
     }
 }
 
-//let array = [5, 17, 77, 50];
-//let test = targetSum(array);
+//let array0 = [5, 17, 77, 50];
+//let test = targetSum(array0);
 // console.log(test);
 
 //2. Palindrome **********************************
@@ -52,7 +52,7 @@ function paindromeCheck(){
 
 //paindromeCheck();
 
-//3. Sequence check
+//3. Sequence check **********************************
 //Step 1: Take array of integers and sort them numerically
 //Step 2: If loop: Iterate through array and check if the next iteration value is equal to the current one plus one 
 //Step 3: If the above is true, then return true; else return false
@@ -71,10 +71,54 @@ function sequenceCheck(array){
 }
 let array1 = [5,7,3,8,6];
 let array2 = [17,15,20,19,21,16,18];
-let test = sequenceCheck(array2);
-console.log(test);
+// let test = sequenceCheck(array2);
+// console.log(test);
 
-//4. Method: takes array and creates count of positive and sum of negative
+//4. Method: takes array and creates count of positive and sum of negative *******************
+//Step 1: Iterate through array, separating it into positive and negative numbers
+//Step 2: If they are positive, have a running count and add one to it
+//Step 3: If negatve, add it to a running sum
+//Step 4: Return the count and sum in an array
+
+function arrayBreakdown(array){
+    let count = 0, sum = 0;
+    let returnArray = [];
+
+    for (let i = 0; i < array.length; i++){
+        if (array[i] > 0){
+            count++;
+        }
+
+        else {
+            sum+=array[i];
+        }
+    };
+
+    returnArray.push(count, sum)
+    return returnArray;
+};
+let array4 = [7, 9, -3, -32, 107, -1, 36, 95, -14, -99, 21];
+
+let test = arrayBreakdown(array4)
+console.log(test)
 
 
-//5. 
+
+
+
+//5. Method: Space separated vales and returns highest and lowest as a string ****************
+
+
+//6. Method: Validate email address **********************************************************
+
+
+//7. Method: Takes string and replaces letters with number position **************************
+
+
+//8. Lock combo ******************************************************************************
+
+
+//9. Happy number ****************************************************************************
+
+
+//10. Return reciprocal of the reverse of number *********************************************
