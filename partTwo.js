@@ -2,37 +2,46 @@
 
 //Part II ************************************
 //1. Happy Numbers ********************************************
-//Step 1: Take input number and check if it is a positive number in if loop
-//Step 2: If it is, convert number into array
-//Step 3: Take each digit from the array and square each digit
-//Step 4: Add the squares
-//Step 5: Take the squares and make that an array
-//Step 6: Add each number in the array
-//Step 7: If that number = 1, then is a happy number, otherwise repeat
+//Step 1: Take user input and use while loop: while it the input is less than zero:
+//Step 2: Take the number and break it down using modulo for the first then...
+//Step 3: Divide the number by 10 to get the second number
+//Step 4: Square the number and add them to the sum
+//Step 5: Use if loop to check if sum is equal to one = is a happy number
+//Step 6: Else if the sum is greater to one (or less than four) = number is sad
 
-// function happyNumber(userNumber){
-//     let array = "";
-//     let sum = 0;
-//     for (let i = 0; i < userNumber.length; i++){
-//         //squares the numbers and adds them to the array
-//         array += (userNumber[i]**2);
-//     }
+function happyNumber(number) {
+    let userInput = number;
+    let sum = 0;
 
-//     for (let i in array){
-//         sum += array[i];
-//     }
-//     let joinedArray = array.join(",")
-//     return joinedArray;
-// };
-// let myArray = happyNumber("25");
-// console.log(myArray);
+    while (number > 0) {
+
+        //breaks apart the number by shifting decimal 
+        let individualNumber = number % 10;
+        number = Math.floor(number / 10);
+
+        //squares each number and adds them
+        sum += individualNumber**2;
+    }
+
+    if (sum === 1) {
+        console.log(userInput + " is a happy number");
+        return true;
+
+    } else if (sum > 1 && sum <= 4) {
+        console.log(userInput + " is a sad number")
+        return false;
+    }
+
+    return happyNumber(sum);
+};
 
 //2. Prime Numbers ********************************************
-//Step 1: First function to see if a number is prime: Iterate through numbers 1 - 100
-//Step 2: If loop using modulus dividing by itself, if 0 then return "false", else return true
-//Step 3: Second function to display the prime numbers: iterate through 1-100 (can exclude 2 and iterate by 2 to skip even numbers since we know they're not prime)
-//Step 4: If the number is prime, push to array
-//Step 5: Display array of prime numbers
+//Step 1: First function to see if a number is prime: Iterate through numbers 2 - 100 (user input)
+//Step 2: If loop to see if the number is less than 2
+//Step 3: For loop using modulus dividing by itself, if 0 then return "false", else return true
+//Step 4: Second function to display the prime numbers: iterate through 1-100 (can exclude 2 and iterate by 2 to skip even numbers since we know they're not prime)
+//Step 5: If the number is prime, push to array
+//Step 6: Display array of prime numbers
 
 function isPrime(number){
     if (number < 2){
@@ -55,7 +64,8 @@ function outputPrime(userNumber){
     }
     console.log(array);
 };
-outputPrime(100);
+
+// outputPrime(100);
 
 //3. Fibonacci ********************************************
 //Step 1: Define variables for the first and second numbers to be added, and then also have a third number that is used for calculations and storage
@@ -78,8 +88,6 @@ function fibonacci(userInput){
     }
 
     console.log(output);
-    console.log(typeof(output));
-
 };
 
 //let fib = fibonacci(800);
