@@ -92,7 +92,7 @@ function fibonacci(userInput){
 
 //starting at user input
 function fibonacciWithStart(userInput){
-    let firstNum = userInput, secondNum = userInput + 1, output = [], tempNum;
+    let firstNum = userInput, secondNum = userInput + 1, output = [firstNum, secondNum], tempNum;
     
     tempNum = firstNum + secondNum;
 
