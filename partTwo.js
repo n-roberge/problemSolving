@@ -90,4 +90,21 @@ function fibonacci(userInput){
     console.log(output);
 };
 
-//let fib = fibonacci(800);
+//starting at user input
+function fibonacciWithStart(userInput){
+    let firstNum = userInput, secondNum = userInput + 1, output = [], tempNum;
+    
+    tempNum = firstNum + secondNum;
+
+    //1000 arbitrary stopping point
+    while(tempNum <= 1000){
+        output.push(tempNum);
+        firstNum = secondNum;
+        secondNum = tempNum;
+        tempNum = firstNum + secondNum;
+    }
+
+    console.log(output);
+};
+
+let fib = fibonacciWithStart(5);
